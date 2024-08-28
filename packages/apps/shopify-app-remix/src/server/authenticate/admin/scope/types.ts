@@ -47,10 +47,22 @@ export interface ScopesApiContext {
 }
 
 export interface RevokeResponse {
+  /**
+   * The list of scope handles that have been revoked.
+   */
   revoked: string[];
 }
 export interface ScopesDetail {
+  /**
+   * The list of scope handles that have been granted.
+   */
   granted: string[];
+  /**
+   * The list of scope handles that are required.
+   */
   required: string[];
+  /**
+   * The list of scope handles that are optional.
+   */
   optional: string[];
 }
