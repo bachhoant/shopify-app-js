@@ -1,5 +1,31 @@
 # Changelog
 
+## 11.4.0
+
+### Minor Changes
+
+- 4a1ffad: Adds API to create usage records for billing
+
+  A new billing helper function has been added to create usage records for a usage billing plan.
+
+  ```ts
+  const chargeBilling = await billing.createUsageRecord({
+    description: 'Usage record for product creation',
+    price: {
+      amount: 1,
+      currencyCode: 'USD',
+    },
+    isTest: true,
+  });
+  console.log(chargeBilling);
+  ```
+
+  Learn more about [App Billing](https://shopify.dev/docs/apps/launch/billing/subscription-billing).
+
+### Patch Changes
+
+- 8e61a39: setUpValidRequest in shopify-api now preserves headers. Documentation for test helpers now more accurately describes use cases.
+
 ## 11.3.0
 
 ### Minor Changes
