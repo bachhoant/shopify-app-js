@@ -86,13 +86,6 @@ interface AdminContextInternal<
   billing: BillingContext<Config>;
 
   /**
-   * Methods to manage optional scopes for the store that made the request.
-   *
-   * {@link https://shopify.dev/docs/apps/scopes}
-   */
-  scopes: ScopesApiContext;
-
-  /**
    * A function that ensures the CORS headers are set correctly for the response.
    *
    * @example
