@@ -86,6 +86,13 @@ interface AdminContextInternal<
   billing: BillingContext<Config>;
 
   /**
+   * Methods to manage optional scopes for the store that made the request.
+   *
+   * {@link https://shopify.dev/docs/apps/scopes}
+   */
+  scopes: ScopesApiContext;
+
+  /**
    * A function that ensures the CORS headers are set correctly for the response.
    *
    * @example
@@ -195,19 +202,12 @@ type EmbeddedTypedAdminContext<
   ? NonEmbeddedAdminContext<Config, Resources>
   : EmbeddedAdminContext<Config, Resources>;
 
-export interface ScopesContext {
-  /**
-   * Methods to manage optional scopes for the store that made the request.
-   */
-  scopes: ScopesApiContext;
-}
-
 export type AdminContext<
   Config extends AppConfigArg,
   Resources extends ShopifyRestResources,
 > =
   FeatureEnabled<Config['future'], 'wip_optionalScopesApi'> extends true
-    ? EmbeddedTypedAdminContext<Config, Resources> & ScopesContext
+    ? EmbeddedTypedAdminContext<Config, Resources> & ScopesApiContext
     : EmbeddedTypedAdminContext<Config, Resources>;
 
 export type AuthenticateAdmin<
