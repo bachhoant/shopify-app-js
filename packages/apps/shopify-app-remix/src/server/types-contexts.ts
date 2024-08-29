@@ -2,8 +2,8 @@
 
 import type {AppConfigArg} from './config-types';
 import type {ShopifyApp} from './types';
-import type {AdminContext as IAdminContext} from './authenticate/admin/types';
-import type {ScopesDetail as IScopesDetail, ScopesApiContext as IScopesApiContext } from './authenticate/admin/scope/types';
+import type {AdminContext as IAdminContext, ScopesContext as IScopesContext} from './authenticate/admin/types';
+import type {ScopesDetail as IScopesDetail} from './authenticate/admin/scope/types';
 import type {UnauthenticatedAdminContext as IUnauthenticatedAdminContext} from './unauthenticated/admin/types';
 import type {UnauthenticatedStorefrontContext as IUnauthenticatedStorefrontContext} from './unauthenticated/storefront/types';
 import type {WebhookContext as IWebhookContext} from './authenticate/webhooks/types';
@@ -40,7 +40,7 @@ export type AdminContext<App = DefaultApp> = IAdminContext<
   ConfigComponents<ShopifyConfig<App>>['resources']
 >;
 
-export type ScopesContext<_App = DefaultApp> = IScopesApiContext;
+export type ScopesContext<_App = DefaultApp> = IScopesContext;
 export type ScopesDetail = IScopesDetail;
 
 export type UnauthenticatedStorefrontContext<_App = DefaultApp> =
